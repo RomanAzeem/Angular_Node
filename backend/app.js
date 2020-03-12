@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser= require('body-parser');
-const mongoose = require('mongoose');
 const postRoutes = require('./routes/posts');
-const connectDB = require('./config/db');
+const connectDB = require('./db');
+
 const app = express();
+
 connectDB();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
