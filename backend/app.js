@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 const postRoutes = require('./routes/posts');
 const connectDB = require('./config/db');
 const app = express();
-
+connectDB();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-connectDB();
+
 app.use( (req, res, next) =>{
 res.setHeader("Access-Control-Allow-Origin","*");
 res.setHeader(
